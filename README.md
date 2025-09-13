@@ -33,11 +33,11 @@ python main.py
 
 ---
 ## 📂 Project Structure
-PatientRecordManager/
+```PatientRecordManager/
 │── main.py        # Main application
 │── patients.db    # SQLite database (ignored in Git)
 │── README.md      # Project documentation
-│── .gitignore     # Ignore cache and database files
+│── .gitignore     # Ignore cache and database files```
 
 ---
 
