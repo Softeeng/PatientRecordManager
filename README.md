@@ -37,7 +37,7 @@ python main.py
 PatientRecordManager/
 │── main.py        # Main application
 |── patient.py     # Functions: add, view, update, delete patients
-|── database.py    # SQLite database connection andsetup
+|── database.py    # SQLite database connection and setup
 |── check_db.py    # Checks database
 │── patients.db    # SQLite database (ignored in Git)
 │── README.md      # Project documentation
