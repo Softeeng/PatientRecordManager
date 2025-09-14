@@ -65,6 +65,75 @@ def view_patients():
 
     conn.close()
 
+def update_patient():
+    patient_id = input("Enter patient ID to update: ")
+
+    while True:
+        if not patient_id.isdigit():
+            print("Patient ID must be a number. Please try again.")
+            patient_id = input("Enter patient ID to update: ")
+        else:
+            patient_id = int(patient_id)
+            break
+
+    conn = get_connection()
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM patients WHERE id = ?", (patient_id,))
+    patient = cursor.fetchone()
+
+    if not patient:
+        print(f"No patient found with ID {patient_id}.")
+        conn.close()
+        return
+
+    print(f"Current details: Name: {patient[1]}, Age: {patient[2]}, Gender:{patient[3]}, Diagnosis: {patient[4]}")
+
+    # Name
+    while True:
+        new_name = input(f"Enter new name [{patient[1]}]: ").strip()
+        if new_name:
+            break
+        else:
+            print("Name cannot be empty. Please try again.")
+
+    # Age
+    while True:
+        age_input = input(f"Enter new age [{patient[2]}]: ")
+        if not age_input.isdigit():
+            print("Age must be a number. Please try again.")
+            continue
+        new_age = int(age_input)
+        if new_age <= 0 or new_age > 120:
+            print("Please enter a valid age between 1 and 120.")
+            continue
+        break
+
+    # Gender
+    while True:
+        new_gender = input(f"Enter new gender (M/F/O) [{patient[3]}]: ").strip().upper()
+        if new_gender in ("M", "F", "O"):
+            break
+        else:
+            print("Invalid gender. Enter M, F, or O.")
+
+    # Diagnosis
+    while True:
+        new_diagnosis = input(f"Enter new diagnosis [{patient[4]}]: ").strip()
+        if new_diagnosis:
+            break
+        else:
+            print("Diagnosis cannot be empty. Please try again.")
+
+    cursor.execute("""
+    UPDATE patients
+    SET name = ?, age = ?, gender = ?, diagnosis = ?
+    WHERE id = ?
+""", (new_name, new_age, new_gender, new_diagnosis, patient_id))
+    conn.commit()
+    conn.close()
+
+    print(f"Patient with ID {patient_id} updated successfully!")
+
 def delete_patient():
     patient_id = input("Enter patient ID to delete: ")
 
