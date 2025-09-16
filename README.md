@@ -1,7 +1,7 @@
 # Patient Record Manager
 
 A simple **console-based Python application** for managing patient records.
-This project is part of a **healthcare IT learning roadmap**, focusing on building real-world skils in software development and data management.
+This project is part of a **healthcare IT learning roadmap**, focusing on building real-world skills in software development and data management.
 
 ---
 
