@@ -32,6 +32,7 @@ python main.py
 ```
 
 ---
+
 ## 📂 Project Structure
 ```
 PatientRecordManager/
