@@ -42,6 +42,7 @@ PatientRecordManager/
 |── check_db.py    # Checks database
 │── patients.db    # SQLite database (ignored in Git)
 │── README.md      # Project documentation
+│── LICENSE        # License file
 │── .gitignore     # Ignore cache and database files
 ```
 
