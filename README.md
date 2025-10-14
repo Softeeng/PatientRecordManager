@@ -49,7 +49,7 @@ PatientRecordManager/
 ---
 
 ## 📖 6-Month Healthcare IT Roadmap
-This project is the first in a **6-month Healthcare IT project series**, covering:
+This project is the first in a [6-month Healthcare IT project series](https://github.com/Softeeng/6-Month-Roadmap/tree/main?tab=readme-ov-file), covering:
 | Month | Project 1 | Project 2 |
 |-------|-----------|-----------|
 | 1     | Patient Record Manager ✅ | Medication Reminder |
